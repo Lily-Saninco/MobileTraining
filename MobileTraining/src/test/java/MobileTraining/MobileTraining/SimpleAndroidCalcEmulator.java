@@ -83,7 +83,7 @@ AndroidDriver driver;
 	   //By name
 	   driver.findElement(By.name("=")).click();
 	   //By ClassName
-		  //get the result=drive
+	   //get the result=drive
 		  String result2 = driver.findElement(By.className("android.widget.EditText")).getText();
 		  System.out.println("Number sum result2 is :"+result);
 
