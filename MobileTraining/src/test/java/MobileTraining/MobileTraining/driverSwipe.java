@@ -43,7 +43,7 @@ Dimension size;
  public void setUp() throws MalformedURLException{
 	 // Set android device desired capablity,set devicename
 	 DesiredCapabilities capabilities = new DesiredCapabilities();
-	 capabilities.setCapability("deviceName", "MyNewDevice");
+	 capabilities.setCapability("deviceName", "MyDevice");
 
 	 //capabilities.setCapability("udid", "2a9497ff");
 	 // Set Browser_name
@@ -57,7 +57,7 @@ Dimension size;
 	//capabilities.setCapability("appPackage", "com.sec.android.app.popupcalculator");
 	capabilities.setCapability("appActivity", "com.fortysevendeg.android.swipelistview.sample.activities.SwipeListViewExampleActivity");
 	
-	driver = new AndroidDriver(new URL("http://127.0.0.1:4725/wd/hub"), capabilities);
+	driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 	driver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
 	WebDriverWait wait = new WebDriverWait(driver, 300);
 	wait.until(ExpectedConditions.elementToBeClickable(By.className("android.widget.RelativeLayout"))); 
@@ -77,10 +77,14 @@ Dimension size;
 	 //Find endx point which is at left side of screen. 
 	 int endx = (int) (size.width * 0.30);
 	 //Find vertical point where you wants to swipe. It is in middle of screen height.
-	 int starty = size.height / 2; System.out.println("startx = " + startx + " ,endx = " + endx + " , starty = " + starty);
-	 //Swipe from Right to Left. driver.swipe(startx, starty, endx, starty, 3000);
+	 int starty = size.height / 2; 
+	 System.out.println("startx = " + startx + " ,endx = " + endx + " , starty = " + starty);
+	 //Swipe from Right to Left. 
+	 driver.swipe(startx, starty, endx, starty, 3000);
 	 Thread.sleep(2000); 
-	 //Swipe from Left to Right. driver.swipe(endx, starty, startx, starty, 3000); Thread.sleep(2000);
+	 //Swipe from Left to Right. 
+	 driver.swipe(endx, starty, startx, starty, 3000); 
+	 Thread.sleep(2000);
 	 } 
  
  @Test 
@@ -95,7 +99,8 @@ Dimension size;
 	 //Find endy point which is at top side of screen. 
 	 int endy = (int) (size.height * 0.20); 
 	 //Find horizontal point where you wants to swipe. It is in middle of screen width. 
-	 int startx = size.width / 2; System.out.println("starty = " + starty + " ,endy = " + endy + " , startx = " + startx); 
+	 int startx = size.width / 2;
+	 System.out.println("starty = " + starty + " ,endy = " + endy + " , startx = " + startx); 
 	 //Swipe from Bottom to Top. 
 	 driver.swipe(startx, starty, startx, endy, 3000);
 	 Thread.sleep(2000); 
