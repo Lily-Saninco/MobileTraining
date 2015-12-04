@@ -114,7 +114,8 @@ Dimension size;
 	 //Find endx point which is at left side of screen.
 	 int endx = (int) (size.width * 0.30);
 	 //Set Y Coordinates of screen where tabs display.
-	 int YCoordinates = 150; 
+	 //int YCoordinates = 150; 
+	int YCoordinates = 100; 
 	 //Swipe tabs from Right to Left.
 	 driver.swipe(startx, YCoordinates, endx, YCoordinates, 3000);
 	 }
