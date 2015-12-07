@@ -92,6 +92,7 @@ Dimension size;
 			 break; 
 			 }else{
 				 //If Tab 11 Is not displayed then scroll tabs from right to left direction by calling ScrollTabs() method. 
+				 System.out.println("scrolling"); 
 				 ScrollTabs(); 
 				 }
 		 }
@@ -115,7 +116,7 @@ Dimension size;
 	 int endx = (int) (size.width * 0.30);
 	 //Set Y Coordinates of screen where tabs display.
 	 //int YCoordinates = 150; 
-	int YCoordinates = 100; 
+	int YCoordinates = 100; // this value have to find by uiautomation.
 	 //Swipe tabs from Right to Left.
 	 driver.swipe(startx, YCoordinates, endx, YCoordinates, 3000);
 	 }
