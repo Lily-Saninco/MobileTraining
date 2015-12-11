@@ -39,7 +39,7 @@ AndroidDriver driver;
  public void setUp() throws MalformedURLException{
 	 // Set android device desired capablity,set devicename
 	 DesiredCapabilities capabilities = new DesiredCapabilities();
-	 capabilities.setCapability("deviceName", "MyNewDevice");
+	 capabilities.setCapability("deviceName", "MyDevice");
 
 	 //capabilities.setCapability("udid", "2a9497ff");
 	 // Set Browser_name
@@ -53,7 +53,7 @@ AndroidDriver driver;
 	//capabilities.setCapability("appPackage", "com.sec.android.app.popupcalculator");
 	capabilities.setCapability("appActivity", "com.mobeta.android.demodslv.Launcher");
 	
-	driver = new AndroidDriver(new URL("http://127.0.0.1:4725/wd/hub"), capabilities);
+	driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 	driver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
 	
 	// create new android driver
